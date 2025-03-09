@@ -40,6 +40,9 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test_functions.py test_sample.py
+    - name: Show Current Location
+      run: |
+        ls
     - name: Execute Python Code
       run: |
         python main.py
