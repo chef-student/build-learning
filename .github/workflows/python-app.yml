@@ -45,4 +45,5 @@ jobs:
         ls
     - name: Execute Python Code
       run: |
-        python ./main.py
+        # python ./main.py
+        python main.py
