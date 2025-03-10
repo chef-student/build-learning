@@ -19,6 +19,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      VARIABLE_ONE: value_one
 
     steps:
     - uses: actions/checkout@v4
@@ -43,6 +45,9 @@ jobs:
     - name: Show Current Location
       run: |
         ls
+    - name: Display Environment Variable
+      run: |
+        echo "VARIABLE_ONE = $VARIABLE_ONE"
     - name: Execute Python Code
       run: |
         python ./main.py
