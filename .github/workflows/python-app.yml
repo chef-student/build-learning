@@ -11,6 +11,13 @@ on:
   pull_request:
     branches: [ "main"]
   workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: first pipe line input
+        options:
+          - bat man
+          - super man
 
 permissions:
   contents: read
