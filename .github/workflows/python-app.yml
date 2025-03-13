@@ -12,7 +12,7 @@ on:
     branches: [ "main"]
   workflow_dispatch:
     inputs:
-      name:
+      hero_name:
         type: choice
         description: first pipe line input
         options:
@@ -57,7 +57,7 @@ jobs:
         echo "VARIABLE_ONE = $VARIABLE_ONE"
     - name: Display Pipe Line Input
       run: |
-        echo "input = {{ github.event.inputs.name }}"
+        echo "input = ${{ inputs.hero_name }}"
     - name: Execute Python Code
       run: |
         python ./main.py
