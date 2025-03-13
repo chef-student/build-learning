@@ -55,6 +55,9 @@ jobs:
     - name: Display Environment Variable
       run: |
         echo "VARIABLE_ONE = $VARIABLE_ONE"
+    - name: Display Pipe Line Input
+      run: |
+        echo "input = {{ github.event.inputs.name }}"
     - name: Execute Python Code
       run: |
         python ./main.py
