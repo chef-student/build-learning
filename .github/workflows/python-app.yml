@@ -18,6 +18,12 @@ on:
         options:
           - bat man
           - super man
+      side_kick:
+        type: choice
+        description: second pipe line input
+        options:
+          - robin
+          - super dog
 
 permissions:
   contents: read
