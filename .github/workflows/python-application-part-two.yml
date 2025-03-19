@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: [Python application]
     types: [completed]
+    branches: [new_**]
 
 jobs:
   build:
