@@ -1,0 +1,17 @@
+on:
+  workflow_run:
+    workflows: [Python application]
+    types: [completed]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      VARIABLE_ONE: value_one
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Display Message
+      run: |
+        echo 'work flow successfully triggered'
