@@ -1,3 +1,5 @@
+name: Python Application Part Two
+
 on:
   workflow_run:
     workflows: [Python application]
