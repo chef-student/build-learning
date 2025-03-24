@@ -1,3 +1,4 @@
+name: scheduled-work-flow
 on:
   schedule:
     - cron: "* * * * *"
