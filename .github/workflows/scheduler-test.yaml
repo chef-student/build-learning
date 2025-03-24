@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: |
+        echo 'work flow schedule triggered'
