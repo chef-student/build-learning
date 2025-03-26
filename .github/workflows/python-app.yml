@@ -5,10 +5,25 @@ name: Python application
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - new_**
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main"]
   workflow_dispatch:
+    inputs:
+      hero_name:
+        type: choice
+        description: first pipe line input
+        options:
+          - bat man
+          - super man
+      side_kick:
+        type: choice
+        description: second pipe line input
+        options:
+          - robin
+          - super dog
 
 permissions:
   contents: read
@@ -17,6 +32,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      VARIABLE_ONE: value_one
 
     steps:
     - uses: actions/checkout@v4
@@ -37,4 +54,17 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest test_functions.py test_sample.py
+    - name: Show Current Location
+      run: |
+        ls
+    - name: Display Environment Variable
+      run: |
+        echo "VARIABLE_ONE = $VARIABLE_ONE"
+    - name: Display Pipe Line Input
+      run: |
+        echo "input = ${{ inputs.hero_name }}"
+    - name: Execute Python Code
+      run: |
+        python ./main.py
+        python main.py
