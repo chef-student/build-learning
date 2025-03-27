@@ -1,8 +1,7 @@
 name: scheduled-work-flow
 on:
   schedule:
-    - cron: "* * * * *"
-  workflow_dispatch:
+    - cron: "*/5 * * * *"
 
 jobs:
   build:
@@ -11,6 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install dependencies
+    - name: Display Message
       run: |
         echo 'work flow schedule triggered'
